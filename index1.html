@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JS:Document</title>
+</head>
+<body>
+    <!-- HTML comment-->>
+    <script>
+
+        function todo(msg){
+            console.log('to do: message');
+            document.write('message', msg);
+            return 200;
+        }
+
+        // 함수를 전달, 반환할 수 있다.
+        // flow : 호출자(data), 피호출자(data)
+        // callback 함수 <-- API networking : waiting
+        // Rest API, AJAX
+        function request( callback ){
+            console.log('send request info');
+            console.log('end');
+            let data = 100;
+            // 완료 후에 실행될 함수
+            return callback(data); // 호출 결과
+        } 
+
+        // call todo
+        let rst = request(todo);
+        console.log(rst);
+
+        function response(){
+            return todo; // 함수를 반환
+        }
+
+        response()('william'); //<--
+        var proc = response();
+        proc('mario');
+
+        // MVC
+
+
+    </script>
+</body>
+</html>
+
+
+
+</body>
+</html>
